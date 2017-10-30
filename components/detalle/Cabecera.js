@@ -1,0 +1,30 @@
+import React, {Component} from 'react';
+import {StyleSheet, TouchableOpacity, Text, ImageBackground} from 'react-native';
+import {Header, Left, Icon, Body, Right} from 'native-base';
+import {Actions} from 'react-native-router-flux';
+import img from '../imgs/space.jpg';
+
+export default class Cabecera extends Component {
+  render() {
+    return (
+      <Header style={styles.header}>
+        <Left>
+          <TouchableOpacity onPress={() => Actions.pop()}>
+            <Icon name='ios-arrow-back' style={styles.color}/>
+          </TouchableOpacity>
+          </Left>
+          <Body/>
+          <Right/>
+      </Header>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: "transparent"
+  },
+  color: {
+    color: "white",
+  }
+});
