@@ -4,6 +4,7 @@ import {Container, Card, CardItem, Thumbnail, Button, Icon, Left, Body} from 'na
 import Cabecera from './components/detalle/Cabecera';
 
 export default class App extends Component < {} > {
+
   render() {
     return (
       <Container>
@@ -38,10 +39,13 @@ export default class App extends Component < {} > {
             </CardItem>
 
             <CardItem>
+            </CardItem>
+
+            <CardItem>
               <Left>
                 <Button transparent textStyle={{color: '#87838B'}}>
-                  <Icon name="logo-github" />
-                  <Text>1,926 stars</Text>
+                  <Icon name="logo-github"/>
+                  <Text>{'\n'} 1,926 stars</Text>
                 </Button>
               </Left>
             </CardItem>
