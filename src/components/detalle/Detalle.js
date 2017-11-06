@@ -10,7 +10,7 @@ export default class Detalle extends Component < {} > {
         <Cabecera/>
         <ScrollView>
           <Image style={styles.img} source={{
-            uri: 'https://facebook.github.io/react/img/logo_og.png'
+            uri: 'https://i.kinja-img.com/gawker-media/image/upload/s--zmCdhKz0--/c_scale,fl_progressive,q_80,w_800/pk2uqc2zdoenp6ue4k7p.jpg'
           }}/>
           <H1 style={styles.h1}>Nombre del Proyecto</H1>
           <Title>Por Saul Sandoval</Title>
