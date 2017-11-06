@@ -1,56 +1,98 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
-import {Container, Card, CardItem, Thumbnail, Button, Icon, Left, Body} from 'native-base';
-import Cabecera from './components/detalle/Cabecera';
+import {Container, H1, Title, Header, Icon, Button, ListItem, Card, CardItem, Body} from 'native-base';
 
 export default class App extends Component < {} > {
-
   render() {
     return (
       <Container>
-        <Cabecera/>
         <ScrollView>
-          <Card style={{flex: 0}}>
-            <CardItem>
-              <Body>
-                <Image source={{uri: 'https://www.tensorflow.org/_static/images/tensorflow/logo.png'}}
-                  style={{height: 200, width: '100%', flex: 1}}/>
-                <Text style={{fontSize: 20, fontWeight: 'bold', margin: 20}}>
-                  TensorFlow
-                </Text>
-              </Body>
-            </CardItem>
+          <Image style={styles.img} source={{
+            uri: 'https://www.tensorflow.org/_static/images/tensorflow/logo.png'
+          }} style={{width: '100%', height: 200}}/>
+          <H1 style={styles.h1}>TensorFlow</H1>
+          <Title>Por Saul Sandoval</Title>
+          <Text style={styles.text}>Saving lifes is a program that try to compare the prices of drugs so you
+            can choose the best option</Text>
+          <View style={styles.view}>
+            <Icon name="bookmark" style={styles.margin}/>
+            <Text style={styles.margin2}>Categoria</Text>
+            <Icon name="pin" style={styles.margin}/>
+            <Text style={styles.margin2}>Lugar</Text>
+          </View>
+          <View style={styles.view2}>
+            <Text style={styles.texto}>20</Text>
+            <Text style={styles.texto}>$20.00</Text>
+            <Text style={styles.texto}>20</Text>
+          </View>
 
-            <CardItem>
+          <ListItem itemHeader first style={styles.back}>
+            <Text style={styles.color}>RECOMPENZAS</Text>
+          </ListItem>
+
+          <View style={styles.card}>
+            <Card>
+              <CardItem header style={{backgroundColor: '#8FB548'}}>
+                <Title style={{color: 'white'}}>Donar $10.00 o mas</Title>
+              </CardItem>
+              <CardItem style={{backgroundColor: '#8FB548'}}>
                 <Body>
-                  <Text style={{fontSize: 16, marginLeft: 20, marginTop: -20}}>Saving lifes is a program that try to
-                    compare the prices of drugs so you can choose the best option</Text>
+                  <Text style={{color: 'white'}}>
+                    Thank You! (US $1.20) {'\n'}
+                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
+                    cuando un impresor
+                  </Text>
                 </Body>
-            </CardItem>
+              </CardItem>
+              <CardItem footer style={{backgroundColor: '#8FB548'}}>
+                <Text style={{color: 'white'}}>20 donadores</Text>
+              </CardItem>
+            </Card>
 
-            <CardItem>
-              <Left>
-                <Image source={{uri: 'https://avatars2.githubusercontent.com/u/20559576?s=460&v=4'}}
-                  style={{height: 30, width: 30, borderRadius: 15, marginLeft: 20}}/>
+            <Card >
+              <CardItem header>
+                <Title style={styles.title}>Donar $10.00 o mas</Title>
+              </CardItem>
+              <CardItem>
                 <Body>
-                  <Text>Saul Sandoval M</Text>
+                  <Text>
+                    Thank You! (US $1.20) {'\n'}
+                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
+                    cuando un impresor
+                  </Text>
                 </Body>
-              </Left>
-            </CardItem>
+              </CardItem>
+              <CardItem footer>
+                <Text>20 donadores</Text>
+              </CardItem>
+            </Card>
 
-            <CardItem>
-            </CardItem>
+            <Card>
+              <CardItem header>
+                <Title style={styles.title}>Donar $10.00 o mas</Title>
+              </CardItem>
+              <CardItem>
+                <Body>
+                  <Text>
+                    Thank You! (US $1.20) {'\n'}
+                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
+                    cuando un impresor
+                  </Text>
+                </Body>
+              </CardItem>
+              <CardItem footer>
+                <Text>20 donadores</Text>
+              </CardItem>
+            </Card>
+          </View>
 
-            <CardItem>
-              <Left>
-                <Button transparent textStyle={{color: '#87838B'}}>
-                  <Icon name="logo-github"/>
-                  <Text>{'\n'} 1,926 stars</Text>
-                </Button>
-              </Left>
-            </CardItem>
-          </Card>
         </ScrollView>
+        <Button style={styles.boton}>
+          <Text style={styles.texto2}>Donar</Text>
+        </Button>
       </Container>
     );
   }
