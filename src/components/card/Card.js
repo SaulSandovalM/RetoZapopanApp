@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {Text, View, ImageBackground, TouchableOpacity, StyleSheet} from 'react-native';
 import * as Progress from 'react-native-progress';
 import {Card, CardItem, Icon, Left, Body, Right} from 'native-base';
 
@@ -7,99 +7,43 @@ export default class CardC extends Component < {} > {
   render() {
     return (
       <TouchableOpacity>
-      <Card style={{
-          flex: 0,
-          width: '95%',
-          alignSelf: 'center',
-          marginTop: 10
-        }}>
-
-        <CardItem style={{
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}>
-          <Text style={{
-              fontSize: 20,
-              fontWeight: 'bold'
-            }}>Plataforma Crowfundig</Text>
+      <Card style={styles.card}>
+        <CardItem style={styles.carditem}>
+          <Text style={styles.title}>Plataforma Crowfundig</Text>
         </CardItem>
 
-        <CardItem cardBody="cardBody">
-
-          <Image source={{
+        <CardItem cardBody>
+          <ImageBackground source={{
               uri: 'https://i.ytimg.com/vi/nZjiF0KTR-E/maxresdefault.jpg'
-            }} style={{
-              height: 300,
-              width: '100%',
-              flex: 1,
-              justifyContent: 'space-between'
-            }}>
+            }} style={styles.image}>
 
-            <View style={{
-                height: 60,
-                width: null,
-                alignItems: 'center',
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-                padding: 5
-              }}>
-              <View style={{
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  alignItems: 'center'
-                }}>
-                <Icon name="ios-bookmarks" style={{
-                    color: 'white',
-                    alignSelf: 'center'
-                  }}/>
-                <Text style={{
-                    color: 'white'
-                  }}>Tecnología e Innovación</Text>
+            <View style={styles.view}>
+              <View style={styles.view2}>
+                <Icon name="ios-bookmarks" style={styles.icon}/>
+                <Text style={styles.text}>Tecnología e Innovación</Text>
               </View>
-
             </View>
 
-            <View style={{
-                backgroundColor: 'rgba(0,0,0,.7)',
-                height: 60,
-                width: null,
-                alignItems: 'center',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                padding: 5
-              }}>
+            <View style={styles.view3}>
               <View>
-                <Progress.Pie progress={0.2} size={25} color={'white'} style={{
+                {/*<Progress.Pie progress={0.2} size={25} color={'white'} style={{
                     alignSelf: 'center'
-                  }}/>
-                <Text style={{
-                    color: 'white'
-                  }}>
-                  Recaudado</Text>
+                  }}/>*/}
+                <Text style={styles.text}>Recaudado</Text>
               </View>
 
               <View>
-                <Icon name="person" style={{
-                    color: 'white',
-                    alignSelf: 'center'
-                  }}/>
-                <Text style={{
-                    color: 'white'
-                  }}>100 Donadores</Text>
+                <Icon name="person" style={styles.icon}/>
+                <Text style={styles.text}>100 Donadores</Text>
               </View>
 
               <View>
-                <Icon name="ios-clock-outline" style={{
-                    color: 'white',
-                    alignSelf: 'center'
-                  }}/>
-                <Text style={{
-                    color: 'white'
-                  }}>14 Hrs restantes</Text>
+                <Icon name="ios-clock-outline" style={styles.icon}/>
+                <Text style={styles.text}>14 Hrs restantes</Text>
               </View>
-
             </View>
-          </Image>
+
+          </ImageBackground>
         </CardItem>
       </Card>
     </TouchableOpacity>
@@ -109,22 +53,55 @@ export default class CardC extends Component < {} > {
 
 const styles = StyleSheet.create({
   card: {
-    flex: 0
+    flex: 0,
+    width: '95%',
+    alignSelf: 'center',
+    marginTop: 10
   },
-  image: {
-    height: 200,
-    width: '100%',
-    flex: 1
+  carditem: {
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
-    margin: 20
+    fontWeight: 'bold'
+  },
+  image: {
+    height: 300,
+    width: '100%',
+    flex: 1,
+    justifyContent: 'space-between'
+  },
+  view: {
+    height: 60,
+    width: null,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    padding: 5
+  },
+  view2: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  icon: {
+    color: 'white',
+    alignSelf: 'center',
+    backgroundColor: 'transparent'
   },
   text: {
-    fontSize: 16,
-    margin: 20,
-    marginTop: -20
+    color: 'white',
+    backgroundColor: 'transparent'
+  },
+  view3: {
+    backgroundColor: 'rgba(0,0,0,.7)',
+    height: 60,
+    width: null,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 5
   },
   imgPerfil: {
     height: 30,
@@ -132,8 +109,4 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginLeft: 20
   },
-  carditem: {
-    marginLeft: 20,
-    marginRight: 20
-  }
 });
