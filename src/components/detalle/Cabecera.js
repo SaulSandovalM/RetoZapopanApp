@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {StyleSheet, TouchableOpacity, Text, ImageBackground} from 'react-native';
 import {Header, Left, Icon, Body, Right} from 'native-base';
 import {Actions} from 'react-native-router-flux';
-import img from '../imgs/space.jpg';
 
 export default class Cabecera extends Component {
   render() {
@@ -22,7 +21,7 @@ export default class Cabecera extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: "transparent"
+    backgroundColor: '#802154',
   },
   color: {
     color: "white",
