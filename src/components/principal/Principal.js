@@ -7,7 +7,7 @@ import {Container} from 'native-base';
 class Principal extends Component {
     render(){
         return(
-            <Container>
+            <Container style={{backgroundColor: '#802154'}}>
                 <ProyectosList />
             </Container>
         );

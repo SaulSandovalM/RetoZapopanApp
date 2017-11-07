@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {StyleSheet, TouchableOpacity, Text, ImageBackground} from 'react-native';
 import {Header, Left, Icon, Body, Right} from 'native-base';
 import {Actions} from 'react-native-router-flux';
-import img from '../../assets/imgs/space.jpg';
 
 export default class Cabecera extends Component {
   render() {

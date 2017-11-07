@@ -1,69 +1,50 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import * as Progress from 'react-native-progress';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right } from 'native-base';
-
+import { Card, CardItem, Icon } from 'native-base';
+import {Actions} from 'react-native-router-flux';
 
 export const Cardd = ({index, imagen, titulo, categoria, donadores, tiempo}) => {
-    return(
-        <TouchableOpacity>
-            <Card style={{flex:0, width:'95%', alignSelf:'center', marginTop:10}}>
+    detalleView= () => {
+        Actions.Detalle(index);
+        console.log(index)
+    };
 
-                <CardItem style={{justifyContent:'center', alignItems:'center'}}>
-                    <Text style={{fontSize: 20, fontWeight:'bold'}}>{titulo}</Text>
+    return(
+        <TouchableOpacity onPress={this.detalleView} >
+            <Card style={styles.cardP}>
+
+                <CardItem style={styles.cardItemS}>
+                    <Text style={styles.textTitle}>{titulo}</Text>
                 </CardItem>
 
                 <CardItem cardBody>
 
-                    <Image source={{
-                        uri: imagen}}
-                           style={{height: 300, width: '100%',
-                               flex: 1,
-                               justifyContent:'space-between'
-                           }}
-                    >
+                    <Image source={{uri: imagen}} style={styles.cardImagen}>
 
-                        <View style={{
-                            height: 60,
-                            width: null,
-                            alignItems:'center',
-                            flexDirection:'row',
-                            justifyContent:'flex-end',
-                            padding: 5
-                        }}
-                        >
-                            <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center', backgroundColor:'#8a3979', borderRadius:5}}>
-                                <Icon name="ios-bookmarks" style={{color:'white', fontSize:14, marginLeft:5, width:15}}/>
-                                <Text style={{color:'white', margin:5}}>{categoria}</Text>
+                        <View style={styles.viewShadow}>
+                            <View style={styles.viewCat}>
+                                <Icon name="ios-bookmarks" style={styles.icon}/>
+                                <Text style={styles.textCat}>{categoria}</Text>
                             </View>
 
                         </View>
 
-                        <View style={{
-                            backgroundColor: 'rgba(0,0,0,.7)',
-                            height: 60,
-                            width: null,
-                            alignItems:'center',
-                            flexDirection:'row',
-                            justifyContent:'space-between',
-                            padding: 5
-                        }}
-                        >
+                        <View style={styles.viewNew}>
                             <View>
-                                <Progress.Pie progress={0.2} size={25} color={'white'} style={{alignSelf:'center'}}/>
-                                <Text style={{color:'white'}}>Recaudado</Text>
+                                <Progress.Pie progress={0.2} size={25} color={'white'} style={styles.center}/>
+                                <Text style={styles.textito}>Recaudado</Text>
                             </View>
 
                             <View>
-                                <Icon name="person" style={{color:'white', alignSelf:'center'}}/>
-                                <Text style={{color:'white'}}>{donadores} Donadores</Text>
+                                <Icon name="person" style={styles.textEnd}/>
+                                <Text style={styles.textito}>{donadores} Donadores</Text>
                             </View>
 
                             <View>
-                                <Icon name="ios-clock-outline" style={{color:'white', alignSelf:'center'}}/>
-                                <Text style={{color:'white'}}>{tiempo} Hrs restantes</Text>
+                                <Icon name="ios-clock-outline" style={styles.textEnd}/>
+                                <Text style={styles.textito}>{tiempo} Hrs restantes</Text>
                             </View>
-
 
                         </View>
                     </Image>
@@ -71,8 +52,75 @@ export const Cardd = ({index, imagen, titulo, categoria, donadores, tiempo}) => 
 
             </Card>
         </TouchableOpacity>
-
     );
 };
 
 export default Cardd;
+
+const styles = StyleSheet.create({
+    cardP:{
+        flex:0,
+        width:'95%',
+        alignSelf:'center',
+        marginTop:10
+    },
+    cardItemS:{
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    textTitle:{
+        fontSize: 20,
+        fontWeight:'bold'
+    },
+    cardImagen:{
+        height: 300,
+        width: '100%',
+        flex: 1,
+        justifyContent:'space-between'
+    },
+    viewShadow:{
+        height: 60,
+        width: null,
+        alignItems:'center',
+        flexDirection:'row',
+        justifyContent:'flex-end',
+        padding: 5
+    },
+    viewCat:{
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'#8a3979',
+        borderRadius:5
+    },
+    icon:{
+        color:'white',
+        fontSize:14,
+        marginLeft:5,
+        width:15
+    },
+    textCat:{
+        color:'white',
+        margin:5
+    },
+    viewNew:{
+        backgroundColor: 'rgba(0,0,0,.7)',
+        height: 60,
+        width: null,
+        alignItems:'center',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        padding: 5
+    },
+    center:{
+        alignSelf:'center'
+    },
+    textito:{
+        color:'white'
+    },
+    textEnd:{
+        color:'white',
+        alignSelf:'center'
+    }
+});
+

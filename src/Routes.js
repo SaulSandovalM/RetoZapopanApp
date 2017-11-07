@@ -9,8 +9,8 @@ const Routes = () => {
         <Root>
             <Router>
                 <Scene key="root">
-                    <Scene key="Principal" header={null} component={Principal} />
-                    <Scene key="Detalle" header={null} component={Detalle} initial/>
+                    <Scene key="Principal" header={null} component={Principal} initial />
+                    <Scene key="Detalle" header={null} component={Detalle} />
                 </Scene>
             </Router>
         </Root>
