@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import {Text, View, ImageBackground, TouchableOpacity, StyleSheet} from 'react-native';
 import * as Progress from 'react-native-progress';
 import {Card, CardItem, Icon, Left, Body, Right} from 'native-base';
+import {Actions} from 'react-native-router-flux';
 
 export default class CardC extends Component < {} > {
   render() {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>Actions.Detalle()}>
       <Card style={styles.card}>
         <CardItem style={styles.carditem}>
           <Text style={styles.title}>Plataforma Crowfundig</Text>
@@ -102,11 +103,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 5
-  },
-  imgPerfil: {
-    height: 30,
-    width: 30,
-    borderRadius: 15,
-    marginLeft: 20
-  },
+  }
 });
