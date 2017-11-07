@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Image, StatusBar} from 'react-native';
 import {Container, H1, Title, Header, Icon, Button, ListItem, Card, CardItem, Body} from 'native-base';
 import Cabecera from './Cabecera';
 
@@ -8,6 +8,7 @@ export default class Detalle extends Component < {} > {
     return (
       <Container>
         <Cabecera/>
+        <StatusBar backgroundColor="#802154" barStyle="light-content"/>
         <ScrollView>
           <Image style={styles.img} source={{
             uri: 'https://i.kinja-img.com/gawker-media/image/upload/s--zmCdhKz0--/c_scale,fl_progressive,q_80,w_800/pk2uqc2zdoenp6ue4k7p.jpg'

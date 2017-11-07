@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity,StatusBar} from 'react-native';
 import Card from './Card';
 import {Content, Container} from 'native-base';
 
@@ -22,6 +22,7 @@ class ProyectosList extends Component {
         return(
 
                 <Content>
+                    <StatusBar backgroundColor="#802154" barStyle="light-content"/>
                 {allProyectos.map((p, index)=>{
                     return <Card
                         key={index}

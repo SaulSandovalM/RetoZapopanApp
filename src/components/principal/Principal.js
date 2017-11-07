@@ -1,21 +1,50 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import ProyectosList from "../card/ProyectosList";
+import {ResultList} from './listado/ResultList';
 import {Container} from 'native-base';
+import Encabezado from "./Encabezado";
+import {setSearch} from '../../actions/filterActions';
 
 class Principal extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            results: []
+        };
+    }
+
+    onSearch = (value) => {
+        this.props.setSearch(value);
+        let results = this.props.allProyectos;
+        const rEx = new RegExp(value, 'i');
+        results = results.filter(p => rEx.test(p.titulo) || rEx.test(p.categoria));
+        this.setState({results})
+    };
+
+
     render(){
+        const {search} = this.props;
+        const {results} = this.state;
         return(
             <Container style={{backgroundColor: '#802154'}}>
-                <ProyectosList />
+                <Encabezado onSearch={this.onSearch} />
+                {
+                    !search
+                        ?
+                        <ProyectosList/>
+                        :
+                        <ResultList results={results}/>
+                }
+
             </Container>
         );
     };
 };
 
 function mapStateToProps(state) {
-    return {allProyectos: state.proyectos.allProyectos}
+    return {search: state.filter.search, allProyectos: state.proyectos.allProyectos}
 }
 
-export default Principal = connect(mapStateToProps)(Principal) ;
+export default Principal = connect(mapStateToProps, {setSearch})(Principal) ;
