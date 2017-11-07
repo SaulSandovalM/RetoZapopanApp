@@ -1,5 +1,5 @@
 export function loadPeopleSuccess(people) {
-  return {type: "LOAD_PEOPLE_SUCCESS", people};
+  return {type: "LOAD_PROJECTS_SUCCESS", projects};
 }
 //este es un thunk porque es asincrono
 export function loadPeople() {

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {StatusBar} from 'react-native';
 import Card from './Card';
-import {Content, Container} from 'native-base';
+import {Content} from 'native-base';
 
 class ProyectosList extends Component {
   state = {
@@ -19,11 +19,12 @@ class ProyectosList extends Component {
     const {allProyectos} = this.state;
     return (
       <Content>
-      {
-        allProyectos.map((p, index) => {
-          return <Card key={index} index={index} {...p}/>
-        })
-      }
+        <StatusBar backgroundColor="#802154" barStyle="light-content"/>
+          {
+            allProyectos.map((p, index) => {
+              return <Card key={index} index={index} {...p}/>
+            })
+          }
       </Content>
     );
   };
