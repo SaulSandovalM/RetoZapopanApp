@@ -25,7 +25,7 @@ class ProyectosList extends Component {
                     return <Card
                         key={index}
                         index={index}
-                        {...p}
+                        p={p}
                     />
                 })}
                 </Content>

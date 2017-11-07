@@ -4,24 +4,26 @@ import {Container, H1, Title, Header, Icon, Button, ListItem, Card, CardItem, Bo
 import Cabecera from './Cabecera';
 
 export default class Detalle extends Component <{}> {
+
   render() {
+    console.log(this.props.p);
+      const {p} = this.props;
     return (
       <Container>
         <Cabecera/>
         <StatusBar backgroundColor="#802154" barStyle="light-content"/>
         <ScrollView>
           <Image style={styles.img} source={{
-            uri: 'https://i.kinja-img.com/gawker-media/image/upload/s--zmCdhKz0--/c_scale,fl_progressive,q_80,w_800/pk2uqc2zdoenp6ue4k7p.jpg'
+            uri: p.imagen
           }}/>
-          <H1 style={styles.h1}>Nombre del Proyecto</H1>
-          <Title>Por Saul Sandoval</Title>
-          <Text style={styles.text}>Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-            archivos de texto. Lorem Ipsum ha Leer Mas</Text>
+          <H1 style={styles.h1}>{p.titulo}</H1>
+          <Title>Por: {p.autor}</Title>
+          <Text style={styles.text}>{p.descripcion}</Text>
           <View style={styles.view}>
-            <Icon name="bookmark" style={styles.margin}/>
-            <Text style={styles.margin2}>Categoria</Text>
+            <Icon name="ios-bookmarks" style={styles.margin}/>
+            <Text style={styles.margin2}>{p.categoria}</Text>
             <Icon name="pin" style={styles.margin}/>
-            <Text style={styles.margin2}>Lugar</Text>
+            <Text style={styles.margin2}>{p.ubicacion}</Text>
           </View>
           <View style={styles.view2}>
             <Text style={styles.texto}>20</Text>

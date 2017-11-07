@@ -28,7 +28,7 @@ class Principal extends Component {
         const {search} = this.props;
         const {results} = this.state;
         return(
-            <Container style={{backgroundColor: '#802154'}}>
+            <Container style={{backgroundColor: '#BDBDBD'}}>
                 <Encabezado onSearch={this.onSearch} />
                 {
                     !search

@@ -5,17 +5,17 @@ import {Card, CardItem, Icon} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 
 export const Cardd = ({
-  index,
-  imagen,
-  titulo,
-  categoria,
-  donadores,
-  tiempo
+  index,p
 }) => {
   detalleView = () => {
-    Actions.Detalle(index);
-    console.log(index)
+    Actions.Detalle({p:p});
   };
+
+  const {imagen,
+      titulo,
+      categoria,
+      donadores,
+      tiempo} = p;
 
   return (
     <TouchableOpacity onPress={this.detalleView}>

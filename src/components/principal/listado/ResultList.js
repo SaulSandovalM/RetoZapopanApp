@@ -10,7 +10,7 @@ export const ResultList = ({results}) => {
             <StatusBar backgroundColor="#802154" barStyle="light-content"/>
             {results.map((p,index)=><Card
                 key={index}
-                {...p}
+                p={p}
             />)}
 
         </Content>
