@@ -1,79 +1,95 @@
 import React, {Component} from 'react';
-import {Text, View, ImageBackground, TouchableOpacity, StyleSheet} from 'react-native';
+import {Text, View, Image, TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
 import * as Progress from 'react-native-progress';
-import {Card, CardItem, Icon, Left, Body, Right} from 'native-base';
+import {Card, CardItem, Icon} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 
-export default class CardC extends Component < {} > {
-  render() {
-    return (
-      <TouchableOpacity onPress={()=>Actions.Detalle()}>
-      <Card style={styles.card}>
-        <CardItem style={styles.carditem}>
-          <Text style={styles.title}>Plataforma Crowfundig</Text>
-        </CardItem>
+export const Cardd = ({
+  index,
+  imagen,
+  titulo,
+  categoria,
+  donadores,
+  tiempo
+}) => {
+  detalleView = () => {
+    Actions.Detalle(index);
+    console.log(index)
+  };
 
-        <CardItem cardBody>
-          <ImageBackground source={{
-              uri: 'https://i.ytimg.com/vi/nZjiF0KTR-E/maxresdefault.jpg'
-            }} style={styles.image}>
+  return (
+    <TouchableOpacity onPress={this.detalleView}>
+    <Card style={styles.cardP}>
 
-            <View style={styles.view}>
-              <View style={styles.view2}>
-                <Icon name="ios-bookmarks" style={styles.icon}/>
-                <Text style={styles.text}>Tecnología e Innovación</Text>
-              </View>
+      <CardItem style={styles.cardItemS}>
+        <Text style={styles.textTitle}>{titulo}</Text>
+      </CardItem>
+
+      <CardItem cardBody>
+
+        <ImageBackground source={{
+            uri: imagen
+          }} style={styles.cardImagen}>
+
+          <View style={styles.viewShadow}>
+            <View style={styles.viewCat}>
+              <Icon name="ios-bookmarks" style={styles.icon}/>
+              <Text style={styles.textCat}>{categoria}</Text>
             </View>
 
-            <View style={styles.view3}>
-              <View>
-                {/*<Progress.Pie progress={0.2} size={25} color={'white'} style={{
-                    alignSelf: 'center'
-                  }}/>*/}
-                <Text style={styles.text}>Recaudado</Text>
-              </View>
+          </View>
 
-              <View>
-                <Icon name="person" style={styles.icon}/>
-                <Text style={styles.text}>100 Donadores</Text>
-              </View>
-
-              <View>
-                <Icon name="ios-clock-outline" style={styles.icon}/>
-                <Text style={styles.text}>14 Hrs restantes</Text>
-              </View>
+          <View style={styles.viewNew}>
+            <View>
+              {/*<Progress.Pie progress={0.2} size={25} color={'white'} style={styles.center}/>*/}
+              <Text style={styles.textito}>Recaudado</Text>
             </View>
 
-          </ImageBackground>
-        </CardItem>
-      </Card>
-    </TouchableOpacity>
-    );
-  }
-}
+            <View>
+              <Icon name="person" style={styles.textEnd}/>
+              <Text style={styles.textito}>{donadores}
+                Donadores</Text>
+            </View>
+
+            <View>
+              <Icon name="ios-clock-outline" style={styles.textEnd}/>
+              <Text style={styles.textito}>{tiempo}
+                Hrs restantes</Text>
+            </View>
+
+          </View>
+        </ImageBackground>
+      </CardItem>
+
+    </Card>
+  </TouchableOpacity>
+  );
+};
+
+export default Cardd;
 
 const styles = StyleSheet.create({
-  card: {
+  cardP: {
     flex: 0,
     width: '95%',
     alignSelf: 'center',
     marginTop: 10
   },
-  carditem: {
+  cardItemS: {
     justifyContent: 'center',
     alignItems: 'center'
   },
-  title: {
+  textTitle: {
     fontSize: 20,
     fontWeight: 'bold'
   },
-  image: {
+  cardImagen: {
     height: 300,
     width: '100%',
     flex: 1,
     justifyContent: 'space-between'
   },
-  view: {
+  viewShadow: {
     height: 60,
     width: null,
     alignItems: 'center',
@@ -81,21 +97,24 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     padding: 5
   },
-  view2: {
+  viewCat: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#8a3979',
+    borderRadius: 5
   },
   icon: {
     color: 'white',
-    alignSelf: 'center',
-    backgroundColor: 'transparent'
+    fontSize: 14,
+    marginLeft: 5,
+    width: 15
   },
-  text: {
+  textCat: {
     color: 'white',
-    backgroundColor: 'transparent'
+    margin: 5
   },
-  view3: {
+  viewNew: {
     backgroundColor: 'rgba(0,0,0,.7)',
     height: 60,
     width: null,
@@ -103,5 +122,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 5
-  }
+  },
+  center: {
+    alignSelf: 'center'
+  },
+  textito: {
+    color: 'white'
+  },
+  textEnd: {
+    color: 'white',
+    alignSelf: 'center'
+  },
 });
