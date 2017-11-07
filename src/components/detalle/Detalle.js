@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, ScrollView, Image, StatusBar} from 'react-native
 import {Container, H1, Title, Header, Icon, Button, ListItem, Card, CardItem, Body} from 'native-base';
 import Cabecera from './Cabecera';
 
-export default class Detalle extends Component < {} > {
+export default class Detalle extends Component <{}> {
   render() {
     return (
       <Container>

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-
 import {Text, View, Image, TouchableOpacity,StatusBar} from 'react-native';
 import Card from './Card';
 import {Content, Container} from 'native-base';
@@ -37,15 +35,11 @@ class ProyectosList extends Component {
 };
 
 function mapStateToProps(state, ownProps) {
-    return {
-        allProyectos: state.proyectos.allProyectos,
-    };
+  return {allProyectos: state.proyectos.allProyectos};
 }
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(dispatch)
-    };
+  return {actions: bindActionCreators(dispatch)};
 }
 
 export default ProyectosList = connect(mapStateToProps, mapDispatchToProps)(ProyectosList);

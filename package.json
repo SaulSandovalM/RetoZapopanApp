@@ -13,7 +13,6 @@
     "react-native-progress": "^3.4.0",
     "react-native-progress-bar": "^0.1.2",
     "react-native-router-flux": "^4.0.0-beta.22",
-    "react-native-video": "^2.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
