@@ -1,8 +1,7 @@
 import React from 'react';
 import Card from '../../card/Card';
-import {ScrollView, View, StyleSheet, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {Content} from 'native-base';
-
 
 export const ResultList = ({results}) => {
     return (
@@ -17,11 +16,3 @@ export const ResultList = ({results}) => {
 
     );
 };
-
-const styles = StyleSheet.create({
-    viewP: {
-        display:"flex",
-        flexDirection:"row",
-        flexWrap:"wrap"
-    },
-});

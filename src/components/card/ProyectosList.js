@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Text, View, Image, TouchableOpacity,StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import Card from './Card';
-import {Content, Container} from 'native-base';
+import {Content} from 'native-base';
 
 class ProyectosList extends Component {
     state={
