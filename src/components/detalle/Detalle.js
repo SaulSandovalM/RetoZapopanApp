@@ -50,9 +50,7 @@ export default class Detalle extends Component <{}> {
                   </Text>
                 </Body>
               </CardItem>
-              <CardItem footer style={{backgroundColor: '#8FB548'}}>
-                <Text style={{color: 'white'}}>20 donadores</Text>
-              </CardItem>
+              
             </Card>
 
             <Card >
@@ -69,9 +67,7 @@ export default class Detalle extends Component <{}> {
                   </Text>
                 </Body>
               </CardItem>
-              <CardItem footer>
-                <Text>20 donadores</Text>
-              </CardItem>
+
             </Card>
 
             <Card>
