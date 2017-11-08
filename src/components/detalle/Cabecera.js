@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity, View, Image} from 'react-native';
 import {Header, Left, Icon, Body, Right} from 'native-base';
 import {Actions} from 'react-native-router-flux';
+import image from '../../assets/imgs/image.png';
 
 export default class Cabecera extends Component {
   render() {
@@ -13,7 +14,11 @@ export default class Cabecera extends Component {
           </TouchableOpacity>
           </Left>
           <Body/>
-          <Right/>
+          <Right>
+          <View style={styles.view}>
+            <Image style={styles.img} source={image}/>
+          </View>
+          </Right>
       </Header>
     );
   }
@@ -25,5 +30,14 @@ const styles = StyleSheet.create({
   },
   color: {
     color: "white",
+  },
+  view: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: 10
+  },
+img: {
+    width: 90,
+    height: 50
   }
 });

@@ -22,8 +22,6 @@ export default class Detalle extends Component <{}> {
           <View style={styles.view}>
             <Icon name="ios-bookmarks" style={styles.margin}/>
             <Text style={styles.margin2}>{p.categoria}</Text>
-            <Icon name="pin" style={styles.margin}/>
-            <Text style={styles.margin2}>{p.ubicacion}</Text>
           </View>
           <View style={styles.view2}>
             <Text style={styles.texto}>20</Text>
@@ -50,7 +48,7 @@ export default class Detalle extends Component <{}> {
                   </Text>
                 </Body>
               </CardItem>
-              
+
             </Card>
 
             <Card >
@@ -84,9 +82,7 @@ export default class Detalle extends Component <{}> {
                   </Text>
                 </Body>
               </CardItem>
-              <CardItem footer>
-                <Text>20 donadores</Text>
-              </CardItem>
+
             </Card>
           </View>
 
