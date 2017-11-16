@@ -41,20 +41,18 @@ export const Cardd = ({
 
           <View style={styles.viewNew}>
             <View>
-              {/*<Progress.Pie progress={0.2} size={25} color={'white'} style={styles.center}/>*/}
+              <Progress.Pie progress={0.2} size={25} color={'white'} style={styles.center}/>
               <Text style={styles.textito}>Recaudado</Text>
             </View>
 
             <View>
               <Icon name="person" style={styles.textEnd}/>
-              <Text style={styles.textito}>{donadores}
-                Donadores</Text>
+              <Text style={styles.textito}>{donadores} Seguidores</Text>
             </View>
 
             <View>
               <Icon name="ios-clock-outline" style={styles.textEnd}/>
-              <Text style={styles.textito}>{tiempo}
-                Hrs restantes</Text>
+              <Text style={styles.textito}>{tiempo} Días restantes</Text>
             </View>
 
           </View>

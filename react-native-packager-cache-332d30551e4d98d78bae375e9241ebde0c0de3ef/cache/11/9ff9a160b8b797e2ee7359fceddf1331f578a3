@@ -1,0 +1,272 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Cardd = undefined;
+
+var _jsxFileName = '/home/jose/V\xEDdeos/RetoZapopanApp/src/components/card/Card.js',
+    _this = this;
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactNative = require('react-native');
+
+var _reactNativeProgress = require('react-native-progress');
+
+var Progress = _interopRequireWildcard(_reactNativeProgress);
+
+var _nativeBase = require('native-base');
+
+var _reactNativeRouterFlux = require('react-native-router-flux');
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Cardd = exports.Cardd = function Cardd(_ref) {
+  var index = _ref.index,
+      p = _ref.p;
+
+  detalleView = function detalleView() {
+    _reactNativeRouterFlux.Actions.Detalle({ p: p });
+  };
+
+  var imagen = p.imagen,
+      titulo = p.titulo,
+      categoria = p.categoria,
+      donadores = p.donadores,
+      tiempo = p.tiempo;
+
+
+  return _react2.default.createElement(
+    _reactNative.TouchableOpacity,
+    { onPress: _this.detalleView, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      }
+    },
+    _react2.default.createElement(
+      _nativeBase.Card,
+      { style: styles.cardP, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        }
+      },
+      _react2.default.createElement(
+        _nativeBase.CardItem,
+        { style: styles.cardItemS, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.Text,
+          { style: styles.textTitle, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 25
+            }
+          },
+          titulo
+        )
+      ),
+      _react2.default.createElement(
+        _nativeBase.CardItem,
+        { cardBody: true, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.ImageBackground,
+          { source: {
+              uri: imagen
+            }, style: styles.cardImagen, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 30
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.View,
+            { style: styles.viewShadow, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 34
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.View,
+              { style: styles.viewCat, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 35
+                }
+              },
+              _react2.default.createElement(_nativeBase.Icon, { name: 'ios-bookmarks', style: styles.icon, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 36
+                }
+              }),
+              _react2.default.createElement(
+                _reactNative.Text,
+                { style: styles.textCat, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 37
+                  }
+                },
+                categoria
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactNative.View,
+            { style: styles.viewNew, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 42
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.View,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 43
+                }
+              },
+              _react2.default.createElement(Progress.Pie, { progress: 0.2, size: 25, color: 'white', style: styles.center, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 44
+                }
+              }),
+              _react2.default.createElement(
+                _reactNative.Text,
+                { style: styles.textito, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 45
+                  }
+                },
+                'Recaudado'
+              )
+            ),
+            _react2.default.createElement(
+              _reactNative.View,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 48
+                }
+              },
+              _react2.default.createElement(_nativeBase.Icon, { name: 'person', style: styles.textEnd, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 49
+                }
+              }),
+              _react2.default.createElement(
+                _reactNative.Text,
+                { style: styles.textito, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 50
+                  }
+                },
+                donadores,
+                ' Seguidores'
+              )
+            ),
+            _react2.default.createElement(
+              _reactNative.View,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 53
+                }
+              },
+              _react2.default.createElement(_nativeBase.Icon, { name: 'ios-clock-outline', style: styles.textEnd, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 54
+                }
+              }),
+              _react2.default.createElement(
+                _reactNative.Text,
+                { style: styles.textito, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 55
+                  }
+                },
+                tiempo,
+                ' D\xEDas restantes'
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = Cardd;
+
+
+var styles = _reactNative.StyleSheet.create({
+  cardP: {
+    flex: 0,
+    width: '95%',
+    alignSelf: 'center',
+    marginTop: 10
+  },
+  cardItemS: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textTitle: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  cardImagen: {
+    height: 300,
+    width: '100%',
+    flex: 1,
+    justifyContent: 'space-between'
+  },
+  viewShadow: {
+    height: 60,
+    width: null,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    padding: 5
+  },
+  viewCat: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#8a3979',
+    borderRadius: 5
+  },
+  icon: {
+    color: 'white',
+    fontSize: 14,
+    marginLeft: 5,
+    width: 15
+  },
+  textCat: {
+    color: 'white',
+    margin: 5
+  },
+  viewNew: {
+    backgroundColor: 'rgba(0,0,0,.7)',
+    height: 60,
+    width: null,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 5
+  },
+  center: {
+    alignSelf: 'center'
+  },
+  textito: {
+    color: 'white'
+  },
+  textEnd: {
+    color: 'white',
+    alignSelf: 'center'
+  }
+});

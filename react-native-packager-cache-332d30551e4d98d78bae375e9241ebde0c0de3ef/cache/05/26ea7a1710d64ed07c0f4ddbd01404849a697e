@@ -1,0 +1,94 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _jsxFileName = '/home/jose/V\xEDdeos/RetoZapopanApp/src/components/principal/Encabezado.js';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactNative = require('react-native');
+
+var _nativeBase = require('native-base');
+
+var _image = require('../../assets/imgs/image.png');
+
+var _image2 = _interopRequireDefault(_image);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Encabezado = function Encabezado(_ref) {
+  var onSearch = _ref.onSearch;
+
+  return _react2.default.createElement(
+    _nativeBase.Header,
+    { searchBar: true, style: styles.header, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      }
+    },
+    _react2.default.createElement(
+      _reactNative.View,
+      { style: styles.view, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        }
+      },
+      _react2.default.createElement(_reactNative.Image, { style: styles.img, source: _image2.default, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        }
+      })
+    ),
+    _react2.default.createElement(
+      _nativeBase.Item,
+      { style: styles.item, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        }
+      },
+      _react2.default.createElement(_nativeBase.Icon, { name: 'ios-search', style: styles.icon, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        }
+      }),
+      _react2.default.createElement(_nativeBase.Input, { onChangeText: onSearch, placeholder: 'Buscar proyecto', style: styles.input, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        }
+      })
+    )
+  );
+};
+
+var styles = _reactNative.StyleSheet.create({
+  header: {
+    backgroundColor: "#802154",
+    justifyContent: "space-between"
+  },
+  view: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: 10
+  },
+  color: {
+    color: "white",
+    fontSize: 35
+  },
+  item: {
+    backgroundColor: 'white',
+    borderRadius: 15
+  },
+  icon: {
+    color: "#000"
+  },
+  input: {
+    borderRadius: 50
+  },
+  img: {
+    width: 90,
+    height: 50
+  }
+});
+
+exports.default = Encabezado;

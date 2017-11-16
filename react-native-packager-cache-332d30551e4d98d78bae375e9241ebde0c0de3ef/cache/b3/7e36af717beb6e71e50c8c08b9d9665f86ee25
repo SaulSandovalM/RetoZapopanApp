@@ -1,0 +1,22 @@
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _redux = require('redux');
+
+var _proyectosReducer = require('./proyectosReducer');
+
+var _proyectosReducer2 = _interopRequireDefault(_proyectosReducer);
+
+var _filterReducer = require('./filterReducer');
+
+var _filterReducer2 = _interopRequireDefault(_filterReducer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var rootReducer = (0, _redux.combineReducers)({
+    proyectos: _proyectosReducer2.default,
+    filter: _filterReducer2.default
+});
+
+exports.default = rootReducer;
