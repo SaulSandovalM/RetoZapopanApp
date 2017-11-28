@@ -14,7 +14,7 @@ export default class Detalle extends Component <{}> {
         <StatusBar backgroundColor="#802154" barStyle="light-content"/>
         <ScrollView>
           <Image style={styles.img} source={{
-            uri: p.imagen
+            uri: p.photo
           }}/>
           <H1 style={styles.h1}>{p.titulo}</H1>
           <Title>Por: {p.autor}</Title>

@@ -1,0 +1,10 @@
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var URL = 'https://still-harbor-68517.herokuapp.com/mobileprojects/';
+
+exports.default = function () {
+    return fetch(URL).then(function (response) {
+        return Promise.all([response, response.json()]);
+    });
+};

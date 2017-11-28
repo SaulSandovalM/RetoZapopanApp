@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {SET_SEARCH} from '../actions/filterActions';
+import {SET_SEARCH} from '../actions/types';
 
 function search(state = null, action) {
   switch (action.type) {

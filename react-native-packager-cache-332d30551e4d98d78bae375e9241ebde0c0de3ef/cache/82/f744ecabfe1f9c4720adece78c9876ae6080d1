@@ -1,0 +1,48 @@
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.fetchData = exports.getDataFailure = exports.getDataSuccess = exports.getData = undefined;
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if ((typeof Symbol === "function" ? Symbol.iterator : "@@iterator") in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _types = require("./types");
+
+var _api = require("../api");
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var getData = exports.getData = function getData() {
+    return {
+        type: _types.FETCHING_DATA
+    };
+};
+
+var getDataSuccess = exports.getDataSuccess = function getDataSuccess(data) {
+    return {
+        type: _types.FETCHING_DATA_SUCCESS,
+        data: data
+    };
+};
+
+var getDataFailure = exports.getDataFailure = function getDataFailure() {
+    return {
+        type: _types.FETCHING_DATA_FAILURE
+    };
+};
+
+var fetchData = exports.fetchData = function fetchData() {
+    return function (dispatch) {
+        dispatch(getData());
+        (0, _api2.default)().then(function (_ref) {
+            var _ref2 = _slicedToArray(_ref, 2),
+                response = _ref2[0],
+                json = _ref2[1];
+
+            dispatch(getDataSuccess(json));
+        }).catch(function (error) {
+            return console.log(error);
+        });
+    };
+};

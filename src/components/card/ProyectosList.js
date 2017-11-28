@@ -1,45 +1,18 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {StatusBar} from 'react-native';
+import React from 'react';
 import Card from './Card';
+import {StatusBar} from 'react-native';
 import {Content} from 'native-base';
 
-class ProyectosList extends Component {
-    state={
-        allProyectos:[]
-    };
+export const ProyectosList = ({proyects}) => {
+    return (
+        <Content>
+            <StatusBar backgroundColor="#802154" barStyle="light-content"/>
+            {proyects.data.map((p,index)=><Card
+                key={index}
+                p={p}
+            />)}
 
-    componentWillMount(){
-        const {allProyectos} = this.props;
-        this.setState({allProyectos});
-    };
+        </Content>
 
-    render(){
-        const {allProyectos} = this.state;
-        return(
-
-                <Content>
-                    <StatusBar backgroundColor="#802154" barStyle="light-content"/>
-                {allProyectos.map((p, index)=>{
-                    return <Card
-                        key={index}
-                        index={index}
-                        p={p}
-                    />
-                })}
-                </Content>
-
-        );
-    };
+    );
 };
-
-function mapStateToProps(state, ownProps) {
-  return {allProyectos: state.proyectos.allProyectos};
-}
-
-function mapDispatchToProps(dispatch) {
-  return {actions: bindActionCreators(dispatch)};
-}
-
-export default ProyectosList = connect(mapStateToProps, mapDispatchToProps)(ProyectosList);

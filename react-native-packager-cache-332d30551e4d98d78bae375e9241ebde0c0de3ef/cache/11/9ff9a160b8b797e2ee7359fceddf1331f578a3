@@ -25,94 +25,90 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Cardd = exports.Cardd = function Cardd(_ref) {
-  var index = _ref.index,
-      p = _ref.p;
+  var p = _ref.p;
 
   detalleView = function detalleView() {
     _reactNativeRouterFlux.Actions.Detalle({ p: p });
   };
 
-  var imagen = p.imagen,
-      titulo = p.titulo,
-      categoria = p.categoria,
-      donadores = p.donadores,
-      tiempo = p.tiempo;
+  var photo = p.photo,
+      name = p.name;
 
 
   return _react2.default.createElement(
     _reactNative.TouchableOpacity,
     { onPress: _this.detalleView, __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 19
       }
     },
     _react2.default.createElement(
       _nativeBase.Card,
       { style: styles.cardP, __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 20
         }
       },
       _react2.default.createElement(
         _nativeBase.CardItem,
         { style: styles.cardItemS, __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 22
           }
         },
         _react2.default.createElement(
           _reactNative.Text,
           { style: styles.textTitle, __source: {
               fileName: _jsxFileName,
-              lineNumber: 25
+              lineNumber: 23
             }
           },
-          titulo
+          name
         )
       ),
       _react2.default.createElement(
         _nativeBase.CardItem,
         { cardBody: true, __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 26
           }
         },
         _react2.default.createElement(
           _reactNative.ImageBackground,
           { source: {
-              uri: imagen
+              uri: photo
             }, style: styles.cardImagen, __source: {
               fileName: _jsxFileName,
-              lineNumber: 30
+              lineNumber: 28
             }
           },
           _react2.default.createElement(
             _reactNative.View,
             { style: styles.viewShadow, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 34
+                lineNumber: 32
               }
             },
             _react2.default.createElement(
               _reactNative.View,
               { style: styles.viewCat, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 35
+                  lineNumber: 33
                 }
               },
               _react2.default.createElement(_nativeBase.Icon, { name: 'ios-bookmarks', style: styles.icon, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 36
+                  lineNumber: 34
                 }
               }),
               _react2.default.createElement(
                 _reactNative.Text,
                 { style: styles.textCat, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 37
+                    lineNumber: 35
                   }
                 },
-                categoria
+                'categoria'
               )
             )
           ),
@@ -120,7 +116,7 @@ var Cardd = exports.Cardd = function Cardd(_ref) {
             _reactNative.View,
             { style: styles.viewNew, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 42
+                lineNumber: 40
               }
             },
             _react2.default.createElement(
@@ -128,19 +124,19 @@ var Cardd = exports.Cardd = function Cardd(_ref) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 43
+                  lineNumber: 41
                 }
               },
               _react2.default.createElement(Progress.Pie, { progress: 0.2, size: 25, color: 'white', style: styles.center, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 44
+                  lineNumber: 42
                 }
               }),
               _react2.default.createElement(
                 _reactNative.Text,
                 { style: styles.textito, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 45
+                    lineNumber: 43
                   }
                 },
                 'Recaudado'
@@ -151,23 +147,22 @@ var Cardd = exports.Cardd = function Cardd(_ref) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 48
+                  lineNumber: 46
                 }
               },
               _react2.default.createElement(_nativeBase.Icon, { name: 'person', style: styles.textEnd, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 49
+                  lineNumber: 47
                 }
               }),
               _react2.default.createElement(
                 _reactNative.Text,
                 { style: styles.textito, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 50
+                    lineNumber: 48
                   }
                 },
-                donadores,
-                ' Seguidores'
+                '11 Seguidores'
               )
             ),
             _react2.default.createElement(
@@ -175,23 +170,22 @@ var Cardd = exports.Cardd = function Cardd(_ref) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 53
+                  lineNumber: 51
                 }
               },
               _react2.default.createElement(_nativeBase.Icon, { name: 'ios-clock-outline', style: styles.textEnd, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 54
+                  lineNumber: 52
                 }
               }),
               _react2.default.createElement(
                 _reactNative.Text,
                 { style: styles.textito, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 55
+                    lineNumber: 53
                   }
                 },
-                tiempo,
-                ' D\xEDas restantes'
+                '11 D\xEDas restantes'
               )
             )
           )

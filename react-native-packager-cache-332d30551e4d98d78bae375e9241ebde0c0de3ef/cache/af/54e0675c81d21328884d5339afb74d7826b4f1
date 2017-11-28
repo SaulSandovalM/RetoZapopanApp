@@ -92,7 +92,7 @@ var Detalle = _wrapComponent('Detalle')(function (_Component) {
             }
           },
           _react3.default.createElement(_reactNative.Image, { style: styles.img, source: {
-              uri: p.imagen
+              uri: p.photo
             }, __source: {
               fileName: _jsxFileName,
               lineNumber: 16

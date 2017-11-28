@@ -1,5 +1,5 @@
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _react2 = require('react');
@@ -20,8 +20,6 @@ var _reactRedux = require('react-redux');
 
 var _ProyectosList = require('../card/ProyectosList');
 
-var _ProyectosList2 = _interopRequireDefault(_ProyectosList);
-
 var _ResultList = require('./listado/ResultList');
 
 var _nativeBase = require('native-base');
@@ -32,6 +30,8 @@ var _Encabezado2 = _interopRequireDefault(_Encabezado);
 
 var _filterActions = require('../../actions/filterActions');
 
+var _proyectosActions = require('../../actions/proyectosActions');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41,93 +41,108 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _components = {
-  Principal: {
-    displayName: 'Principal'
-  }
+    Principal: {
+        displayName: 'Principal'
+    }
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: '/home/jose/V\xEDdeos/RetoZapopanApp/src/components/principal/Principal.js',
-  components: _components,
-  locals: [module],
-  imports: [_react3.default]
+    filename: '/home/jose/V\xEDdeos/RetoZapopanApp/src/components/principal/Principal.js',
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
 });
 
 function _wrapComponent(id) {
-  return function (Component) {
-    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-  };
+    return function (Component) {
+        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
 }
 
 var Principal = _wrapComponent('Principal')(function (_Component) {
-  _inherits(Principal, _Component);
+    _inherits(Principal, _Component);
 
-  function Principal(props) {
-    _classCallCheck(this, Principal);
+    function Principal(props) {
+        _classCallCheck(this, Principal);
 
-    var _this = _possibleConstructorReturn(this, (Principal.__proto__ || Object.getPrototypeOf(Principal)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Principal.__proto__ || Object.getPrototypeOf(Principal)).call(this, props));
 
-    _this.onSearch = function (value) {
-      _this.props.setSearch(value);
-      var results = _this.props.allProyectos;
-      var rEx = new RegExp(value, 'i');
-      results = results.filter(function (p) {
-        return rEx.test(p.titulo) || rEx.test(p.categoria);
-      });
-      _this.setState({ results: results });
-    };
+        _this.onSearch = function (value) {
+            _this.props.setSearch(value);
+            var results = _this.props.dataProyectos;
+            console.log(results);
+            var rEx = new RegExp(value, 'i');
+            results = results.data.filter(function (p) {
+                return rEx.test(p.name);
+            });
+            console.log(results);
+            _this.setState({ results: results });
+        };
 
-    _this.state = {
-      results: []
-    };
-    return _this;
-  }
-
-  _createClass(Principal, [{
-    key: 'render',
-    value: function render() {
-      var search = this.props.search;
-      var results = this.state.results;
-
-      return _react3.default.createElement(
-        _nativeBase.Container,
-        { style: { backgroundColor: '#BDBDBD' }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 30
-          }
-        },
-        _react3.default.createElement(_Encabezado2.default, { onSearch: this.onSearch, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 31
-          }
-        }),
-        !search ? _react3.default.createElement(_ProyectosList2.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 35
-          }
-        }) : _react3.default.createElement(_ResultList.ResultList, { results: results, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 37
-          }
-        })
-      );
+        _this.state = {
+            results: []
+        };
+        return _this;
     }
-  }]);
 
-  return Principal;
+    _createClass(Principal, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.props.fetchData();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                search = _props.search,
+                dataProyectos = _props.dataProyectos;
+            var results = this.state.results;
+
+            console.log(this.props.dataProyectos.data);
+            console.log(this.props.search);
+            return _react3.default.createElement(
+                _nativeBase.Container,
+                { style: { backgroundColor: '#BDBDBD' }, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 41
+                    }
+                },
+                _react3.default.createElement(_Encabezado2.default, { onSearch: this.onSearch, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 42
+                    }
+                }),
+                this.props.dataProyectos.isFetching && _react3.default.createElement(_nativeBase.Spinner, { color: 'red', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 43
+                    }
+                }),
+                !search ? _react3.default.createElement(_ProyectosList.ProyectosList, { proyects: dataProyectos, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 48
+                    }
+                }) : _react3.default.createElement(_ResultList.ResultList, { results: results, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 50
+                    }
+                })
+            );
+        }
+    }]);
+
+    return Principal;
 }(_react2.Component));
 
 ;
 
 function mapStateToProps(state) {
-  return { search: state.filter.search, allProyectos: state.proyectos.allProyectos };
+    return { search: state.filter.search, dataProyectos: state.dataReducer };
 }
 
 var styles = _reactNative.StyleSheet.create({
-  back: {
-    backgroundColor: '#802154'
-  }
+    back: {
+        backgroundColor: '#802154'
+    }
 });
 
-exports.default = Principal = (0, _reactRedux.connect)(mapStateToProps, { setSearch: _filterActions.setSearch })(Principal);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, { setSearch: _filterActions.setSearch, fetchData: _proyectosActions.fetchData })(Principal);

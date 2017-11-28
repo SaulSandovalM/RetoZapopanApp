@@ -1,5 +1,5 @@
-export const SET_SEARCH = "SET_SEARCH";
+import {SET_SEARCH} from "./types";
 
 export function setSearch(search) {
-  return {type: SET_SEARCH, search}
+    return {type: SET_SEARCH, search}
 }

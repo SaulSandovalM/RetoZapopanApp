@@ -5,36 +5,34 @@ import {Card, CardItem, Icon} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 
 export const Cardd = ({
-  index,p
+  p
 }) => {
   detalleView = () => {
     Actions.Detalle({p:p});
   };
 
-  const {imagen,
-      titulo,
-      categoria,
-      donadores,
-      tiempo} = p;
+  const {photo,
+      name
+      } = p;
 
   return (
     <TouchableOpacity onPress={this.detalleView}>
     <Card style={styles.cardP}>
 
       <CardItem style={styles.cardItemS}>
-        <Text style={styles.textTitle}>{titulo}</Text>
+        <Text style={styles.textTitle}>{name}</Text>
       </CardItem>
 
       <CardItem cardBody>
 
         <ImageBackground source={{
-            uri: imagen
+            uri: photo
           }} style={styles.cardImagen}>
 
           <View style={styles.viewShadow}>
             <View style={styles.viewCat}>
               <Icon name="ios-bookmarks" style={styles.icon}/>
-              <Text style={styles.textCat}>{categoria}</Text>
+              <Text style={styles.textCat}>categoria</Text>
             </View>
 
           </View>
@@ -47,12 +45,12 @@ export const Cardd = ({
 
             <View>
               <Icon name="person" style={styles.textEnd}/>
-              <Text style={styles.textito}>{donadores} Seguidores</Text>
+              <Text style={styles.textito}>11 Seguidores</Text>
             </View>
 
             <View>
               <Icon name="ios-clock-outline" style={styles.textEnd}/>
-              <Text style={styles.textito}>{tiempo} Días restantes</Text>
+              <Text style={styles.textito}>11 Días restantes</Text>
             </View>
 
           </View>
